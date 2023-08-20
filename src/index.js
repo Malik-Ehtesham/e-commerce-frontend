@@ -44,6 +44,7 @@ const store = createStore(
 
 const root = createRoot(document.getElementById("root"));
 
+// ROOT RENDER
 root.render(
   <Provider store={store}>
     <BrowserRouter>
