@@ -16,7 +16,7 @@ import ForgotPassword from "./Components/ForgotPassword/ForgotPassword";
 import ResetPassword from "./Components/ResetPassword/ResetPassword";
 
 import "./App.css";
-
+// COMPONENT
 function App(props) {
   const token = localStorage.getItem("token");
   return (
