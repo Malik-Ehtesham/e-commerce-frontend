@@ -1,0 +1,7 @@
+.truncated-text-checkout {
+  /* white-space: nowrap; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 400px; /* Set your desired maximum width for the text */
+  max-height: 150px;
+}

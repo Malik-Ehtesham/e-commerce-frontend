@@ -1,0 +1,13 @@
+.truncated-text-cart-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 400px; /* Set your desired maximum width for the text */
+}
+
+.truncated-text-cart-desc {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 350px; /* Set your desired maximum width for the text */
+}

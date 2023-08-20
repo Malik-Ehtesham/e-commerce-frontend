@@ -1,0 +1,115 @@
+.Position {
+  position: absolute;
+  margin-top: 38px;
+  z-index: 2;
+}
+.Background {
+  background: rgb(246, 246, 246);
+  border-radius: 5px;
+}
+.Item {
+  /* margin: 20px 0 20px 0px; */
+  margin-left: 5px;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .Position {
+    width: 94.5vw;
+    /* margin-right: 100px; */
+  }
+}
+/* ------BUTTONS------ */
+.link {
+  text-decoration: none;
+  font-size: 24px;
+  color: rgb(255, 255, 255);
+  margin: 0px;
+}
+.link:hover {
+  border-bottom: 5px solid rgb(250, 177, 31);
+  border-radius: 3px 3px 3px 3px;
+  color: rgb(250, 177, 31);
+  -webkit-border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -ms-border-radius: 3px 3px 3px 3px;
+  -o-border-radius: 3px 3px 3px 3px;
+}
+/* --------CSS FOR LOGIN BUTTON---------- */
+.glow-on-hover {
+  width: 90px;
+  height: 45px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.glow-on-hover:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000;
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
