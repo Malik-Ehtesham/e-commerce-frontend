@@ -83,7 +83,7 @@ const Reviews = (props) => {
                   rating={review.rating}
                   review={review.comment}
                   user={review.user}
-                  currentUser={user}
+                  currentUser={props.user}
                   toggleForm={toggleWriteReviewHandler}
                 />
               );

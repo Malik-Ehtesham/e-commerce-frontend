@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import { toast } from "react-toastify";
 
 import AccountBar from "../../Components/AccountBar/AccountBar";
 import AccountSettings from "../../Components/AccountSettings/AccountSettings";
@@ -14,19 +15,25 @@ import * as actions from "../../Store/Actions/index";
 const AdminPanel = (props) => {
   // -------USE EFFECTS---------
   useEffect(() => {
+    props.onGetUser(userId, toast);
     props.onFetchOrders();
   }, []);
 
   // ----------VARIABLE DECALARATIONS--------
   let pageContent;
 
-  if (props.CurrentPage == "Profile") {
-    pageContent = <YourProfilePage />;
-  } else if (props.CurrentPage == "Orders") {
-    pageContent = <YourOrders />;
-  } else if (props.CurrentPage == "Settings") {
-    pageContent = <AccountSettings />;
+  const userId = localStorage.getItem("userId");
+
+  if (!props.loading) {
+    if (props.CurrentPage == "Profile") {
+      pageContent = <YourProfilePage />;
+    } else if (props.CurrentPage == "Orders") {
+      pageContent = <YourOrders />;
+    } else if (props.CurrentPage == "Settings") {
+      pageContent = <AccountSettings />;
+    }
   }
+
   // COMPONENT
   return (
     <div
@@ -56,7 +63,7 @@ const AdminPanel = (props) => {
 const mapStateToProps = (state) => {
   return {
     CurrentPage: state.AdminPanel.CurrentPage,
-    loading: state.AdminPanel.loading,
+    loading: state.Auth.loading,
   };
 };
 
@@ -64,6 +71,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onFetchOrders: () => {
       dispatch(actions.FetchOrders());
+    },
+    onGetUser: (userId, toast) => {
+      dispatch(actions.getUser(userId, toast));
     },
   };
 };

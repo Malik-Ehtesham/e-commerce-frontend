@@ -29,7 +29,7 @@ export const auth = (data, isSignup) => async (dispatch) => {
     );
 
     localStorage.setItem("token", response.data.token);
-    localStorage.setItem("user", response.data.user);
+    localStorage.setItem("userId", response.data.user._id);
 
     dispatch(authSuccess(response.data.user, response.data.token));
   } catch (error) {
@@ -286,3 +286,59 @@ export const ResetPassword =
       dispatch(ResetPasswordFail(error.response.data.message));
     }
   };
+
+// GET USER
+
+// Action creator to initiate the request for getting the current user
+export const getUserStart = () => ({
+  type: actionTypes.GET_USER_START,
+});
+
+// Action creator for successful retrieval of the  user
+export const getUserSuccess = (user) => ({
+  type: actionTypes.GET_USER_SUCCESS,
+  user,
+});
+
+// Action creator for failure to get the  user
+export const getUserFail = (error, toast) => (
+  toast.error(error, {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "colored",
+  }),
+  {
+    type: actionTypes.GET_USER_FAIL,
+    error,
+  }
+);
+
+// Async action creator to fetch the  user's data
+export const getUser = (userId, toast) => {
+  const token = localStorage.getItem("token");
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return async (dispatch) => {
+    dispatch(getUserStart());
+
+    try {
+      // Replace this with your actual API endpoint
+      const response = await axios.get(
+        `https://e-commerce-backend-production-e87.up.railway.app/api/users/${userId}`,
+        config
+      );
+      const user = response.data;
+      dispatch(getUserSuccess(user));
+    } catch (error) {
+      dispatch(getUserFail(error.response.data.message, toast));
+    }
+  };
+};

@@ -112,6 +112,7 @@ const DeleteAccountFail = (state, action) => {
 
 const Logout = (state, action) => {
   localStorage.removeItem("token");
+  localStorage.removeItem("userId");
   return UpdateObject(state, {
     token: null,
     user: null,
@@ -170,6 +171,26 @@ const ResetSuccessForAuth = (state, action) => {
     success: false,
   });
 };
+
+const GetUserStart = (state, action) => {
+  return UpdateObject(state, {
+    loading: true,
+    error: "",
+  });
+};
+const GetUserSuccess = (state, action) => {
+  return UpdateObject(state, {
+    user: action.user,
+    loading: false,
+    error: "",
+  });
+};
+const GetUserFail = (state, action) => {
+  return UpdateObject(state, {
+    loading: false,
+    // error: action.error,
+  });
+};
 // MAIN REDUCER
 const Auth = (state = initialState, action) => {
   switch (action.type) {
@@ -211,6 +232,12 @@ const Auth = (state = initialState, action) => {
       return ResetPasswordSuccess(state, action);
     case actionTypes.RESET_PASSWORD_FAIL:
       return ResetPasswordFail(state, action);
+    case actionTypes.GET_USER_START:
+      return GetUserStart(state, action);
+    case actionTypes.GET_USER_SUCCESS:
+      return GetUserSuccess(state, action);
+    case actionTypes.GET_USER_FAIL:
+      return GetUserFail(state, action);
     case actionTypes.RESET_SUCCESS:
       return ResetSuccessForAuth(state, action);
     default:

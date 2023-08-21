@@ -26,6 +26,7 @@ export {
   ForgotPassword,
   ResetPassword,
   ResetSuccessForAuth,
+  getUser,
 } from "./Auth";
 
 export { ChangeCurrentPage, FetchOrders } from "./AdminPanel";

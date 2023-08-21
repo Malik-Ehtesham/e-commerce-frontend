@@ -33,8 +33,6 @@ const ProfileForm = (props) => {
 
   const strArray = props.error.split(". ");
 
-  const user = localStorage.getItem("user");
-
   //------------USE-EFFECTS--------------
 
   useEffect(() => {
@@ -230,7 +228,7 @@ const ProfileForm = (props) => {
             <input
               className="col-9-md col-8  fs-5 overflow-auto border-0"
               type="text"
-              value={user.username}
+              value={props.user ? props.user.username : ""}
               readOnly
             />
           )}
@@ -257,7 +255,7 @@ const ProfileForm = (props) => {
             <input
               className="col-9-md col-8  fs-5 overflow-auto border-0"
               type="email"
-              value={user.email}
+              value={props.user ? props.user.email : ""}
               readOnly
             />
           )}
@@ -289,7 +287,7 @@ const ProfileForm = (props) => {
             <input
               className="col-9-md col-8  fs-5 overflow-auto border-0"
               type="text"
-              value={user.shippingAddress}
+              value={props.user ? props.user.shippingAddress : ""}
               readOnly
             />
           )}
@@ -317,7 +315,13 @@ const ProfileForm = (props) => {
             <input
               className="col-9-md col-8  fs-5 overflow-auto border-0"
               type="text"
-              value={!user.phoneNumber ? "Undefined" : user.phoneNumber}
+              value={
+                props.user
+                  ? !props.user.phoneNumber
+                    ? "Undefined"
+                    : props.user.phoneNumber
+                  : ""
+              }
               readOnly
             />
           )}
@@ -344,7 +348,13 @@ const ProfileForm = (props) => {
             <input
               className="col-9-md col-8  fs-5 overflow-auto border-0"
               type="text"
-              value={!user.country ? "Undefined" : user.country}
+              value={
+                props.user
+                  ? !props.user.country
+                    ? "Undefined"
+                    : props.user.country
+                  : ""
+              }
               readOnly
             />
           )}
