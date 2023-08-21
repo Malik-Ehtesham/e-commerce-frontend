@@ -12,6 +12,7 @@ const AccountBar = (props) => {
     props.onChangeCurrentPage(CurrentPage);
   };
 
+  const user = localStorage.getItem("user");
   return (
     <ul className="nav bg-dark">
       <li
@@ -25,7 +26,7 @@ const AccountBar = (props) => {
           src={Default}
         />
         <Link to="/AdminPanel/Profile" className="nav-link text-light">
-          {props.user.length !== 0 ? `${props.user.username}` : "Your Profile"}
+          {user.length !== 0 ? `${user.username}` : "Your Profile"}
         </Link>
       </li>
       <li

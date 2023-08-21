@@ -33,6 +33,8 @@ const ProfileForm = (props) => {
 
   const strArray = props.error.split(". ");
 
+  const user = localStorage.getItem("user");
+
   //------------USE-EFFECTS--------------
 
   useEffect(() => {
@@ -228,7 +230,7 @@ const ProfileForm = (props) => {
             <input
               className="col-9-md col-8  fs-5 overflow-auto border-0"
               type="text"
-              value={props.user.username}
+              value={user.username}
               readOnly
             />
           )}
@@ -255,7 +257,7 @@ const ProfileForm = (props) => {
             <input
               className="col-9-md col-8  fs-5 overflow-auto border-0"
               type="email"
-              value={props.user.email}
+              value={user.email}
               readOnly
             />
           )}
@@ -287,7 +289,7 @@ const ProfileForm = (props) => {
             <input
               className="col-9-md col-8  fs-5 overflow-auto border-0"
               type="text"
-              value={props.user.shippingAddress}
+              value={user.shippingAddress}
               readOnly
             />
           )}
@@ -315,9 +317,7 @@ const ProfileForm = (props) => {
             <input
               className="col-9-md col-8  fs-5 overflow-auto border-0"
               type="text"
-              value={
-                !props.user.phoneNumber ? "Undefined" : props.user.phoneNumber
-              }
+              value={!user.phoneNumber ? "Undefined" : user.phoneNumber}
               readOnly
             />
           )}
@@ -344,7 +344,7 @@ const ProfileForm = (props) => {
             <input
               className="col-9-md col-8  fs-5 overflow-auto border-0"
               type="text"
-              value={!props.user.country ? "Undefined" : props.user.country}
+              value={!user.country ? "Undefined" : user.country}
               readOnly
             />
           )}

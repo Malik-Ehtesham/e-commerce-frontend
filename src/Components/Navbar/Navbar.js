@@ -22,6 +22,7 @@ const Navbar = (props) => {
     return SingleProduct.title.toLowerCase().includes(searchBar);
   });
 
+  const token = localStorage.getItem("token");
   // ------HANDLERS---------
 
   const SearchBarHandler = (e) => {
@@ -38,7 +39,7 @@ const Navbar = (props) => {
       );
     }
   };
-  const token = localStorage.getItem("token");
+
   // ------COMPONENT---------
   return (
     <div>

@@ -27,6 +27,8 @@ const Reviews = (props) => {
 
   const token = localStorage.getItem("token");
 
+  const user = localStorage.getItem("user");
+
   // ------HANDLERS--------
 
   const toggleWriteReviewHandler = () => {
@@ -81,7 +83,7 @@ const Reviews = (props) => {
                   rating={review.rating}
                   review={review.comment}
                   user={review.user}
-                  currentUser={props.user}
+                  currentUser={user}
                   toggleForm={toggleWriteReviewHandler}
                 />
               );

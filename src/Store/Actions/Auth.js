@@ -29,6 +29,7 @@ export const auth = (data, isSignup) => async (dispatch) => {
     );
 
     localStorage.setItem("token", response.data.token);
+    localStorage.setItem("user", response.data.user);
 
     dispatch(authSuccess(response.data.user, response.data.token));
   } catch (error) {
