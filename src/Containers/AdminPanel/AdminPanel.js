@@ -63,7 +63,7 @@ const AdminPanel = (props) => {
 const mapStateToProps = (state) => {
   return {
     CurrentPage: state.AdminPanel.CurrentPage,
-    loading: state.Auth.loading,
+    loading: state.AdminPanel.loading,
   };
 };
 

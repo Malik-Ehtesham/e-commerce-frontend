@@ -47,6 +47,12 @@ const ProfileForm = (props) => {
     }
   }, [props.success]);
 
+  useEffect(() => {
+    if (props.error) {
+      setEditProfile(true);
+    }
+  }, [props.error]);
+
   // ------------HANDLERS------------
 
   const SignupDataHandler = (e) => {
@@ -219,7 +225,7 @@ const ProfileForm = (props) => {
               />
               {props.error ? (
                 <p className="fs-6 m-0 text-danger fw-semibold">
-                  {strArray.filter((error) => error.includes("username"))}{" "}
+                  {strArray.filter((error) => error.includes("username"))}
                   {strArray.filter((error) => error.includes("changed"))}
                 </p>
               ) : null}
