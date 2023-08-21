@@ -51,7 +51,7 @@ function App(props) {
         <Route path="/authenticate/Login" element={<Auth />} />
         <Route path="/forgotPassword" element={<ForgotPassword />} />
         <Route
-          path="https://e-commerce-backend-production-e87.up.railway.app/api/users/resetPassword/:resetToken"
+          path="https://e-commerce-shop-it.netlify.app/api/users/resetPassword/:resetToken"
           element={<ResetPassword />}
         />
 
