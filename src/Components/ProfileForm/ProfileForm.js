@@ -151,7 +151,11 @@ const ProfileForm = (props) => {
               />
               {props.error ? (
                 <p className="fs-6 m-0 text-danger fw-semibold">
-                  {strArray.filter((error) => error.includes("`password`"))}
+                  {strArray.filter(
+                    (error) =>
+                      error.includes("provide") && error.includes("password")
+                  )}
+                  {strArray.filter((error) => error.includes("8"))}
                 </p>
               ) : null}
             </div>
@@ -171,7 +175,8 @@ const ProfileForm = (props) => {
               />
               {props.error ? (
                 <p className="fs-6 m-0 text-danger fw-semibold">
-                  {strArray.filter((error) => error.includes("Confirm"))}
+                  {strArray.filter((error) => error.includes("confirm"))}
+                  {strArray.filter((error) => error.includes("match"))}
                 </p>
               ) : null}
             </div>

@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 
-import Footer from "../Footer/Footer";
-import Navbar from "../Navbar/Navbar";
-
 import * as actions from "../../Store/Actions/index";
 import "./LoginForm.css";
 
