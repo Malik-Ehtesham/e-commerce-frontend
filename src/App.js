@@ -50,10 +50,7 @@ function App(props) {
         <Route path="/authenticate/Signup" element={<SignupForm />} />
         <Route path="/authenticate/Login" element={<Auth />} />
         <Route path="/forgotPassword" element={<ForgotPassword />} />
-        <Route
-          path="https://e-commerce-shop-it.netlify.app/api/users/resetPassword/:resetToken"
-          element={<ResetPassword />}
-        />
+        <Route path="/resetPassword/:resetToken" element={<ResetPassword />} />
 
         <Route path="/MyOrders" element={<Orders />} />
 

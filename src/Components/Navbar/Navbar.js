@@ -102,7 +102,7 @@ const Navbar = (props) => {
                   </Link>
                 ) : (
                   <Link
-                    to="/authenticate/Login"
+                    to="/resetPassword/2a7b59c643c4f217a59f8fb90ea042a3e04b55cc998da5b6fba1fd44498d4846"
                     className="btn text-light fs-5 fw-semibold text-center mx-1 my-2 glow-on-hover"
                   >
                     Login
