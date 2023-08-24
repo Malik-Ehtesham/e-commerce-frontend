@@ -102,20 +102,19 @@ const SingleProduct = (props) => {
     <Spinner />
   ) : (
     <div className="container  ">
-      <div className="row border border-info border-5 rounded-3 mx-1 py-3 my-5">
-        <div className="col-md-3 col-12 d-flex  justify-content-center">
+      <div className="row  mx-1 py-3 my-5">
+        <div className="col-md-6 col-12 d-flex  justify-content-center">
           <img
             src={props.SingleProduct.image}
-            style={{ width: "300px", maxHeight: "300px" }}
-            className="img-fluid "
+            style={{ width: "500px", maxHeight: "500px" }}
+            className="img-fluid border rounded"
           />
         </div>
         <div className="col-md-6 col-12">
           <div className="d-flex flex-column">
-            <h1>{props.SingleProduct.title}</h1>
+            <p className="fs-4 fw-bold">{props.SingleProduct.title}</p>
 
-            <hr />
-            <p className="fs-2 fw-semibold text-danger">
+            <p className="fs-4 fw-semibold ">
               Rs. {Math.round(props.SingleProduct.price)}
             </p>
             <strong className="">
@@ -127,12 +126,12 @@ const SingleProduct = (props) => {
                 />
               )}
             </strong>
-            <hr />
-            <div className="d-flex">
-              <p className="fs-5 fw-bold">Qunatity:&nbsp;</p>
+            {/* <hr /> */}
+            <div className="d-flex flex-column my-3">
+              <p className=" fw-6 mb-1">Qunatity:&nbsp;</p>
               <div className="d-flex">
                 <p
-                  className="border border-secondary border-1 px-2  py-0 fs-5 fw-bold"
+                  className="border border-secondary border-1 px-3  py-0 fs-5 fw-bold"
                   onClick={QuantityDecrementHandler}
                   style={
                     disableDecrementButton
@@ -142,11 +141,11 @@ const SingleProduct = (props) => {
                 >
                   -
                 </p>
-                <p className="border border-1 border-dark px-3  py-0 fs-5 ">
+                <p className="border border-1 border-dark px-3  py-1 fs-5 ">
                   {productQuantity}
                 </p>
                 <p
-                  className="border border-secondary border-1 px-2 py-0 fs-5 fw-bold"
+                  className="border border-secondary border-1 px-3 py-0 fs-5 fw-bold"
                   onClick={QuantityIncrementHandler}
                   style={{ cursor: "pointer" }}
                 >
@@ -154,13 +153,15 @@ const SingleProduct = (props) => {
                 </p>
               </div>
             </div>
-            <div className="d-flex justify-content-evenly my-2">
+            <p className="fs-6  mb-0">Delivery Method:</p>
+            <p className="fs-5 fw-semibold lead">Cash On Delivery</p>
+            <div className="d-flex flex-column  justify-content-evenly my-3">
               {token ? (
                 <Link
                   to={`/Checkout/${id}/${Math.round(
                     props.SingleProduct.price
                   )}/${productQuantity}`}
-                  className="btn btn-success btn-lg"
+                  className="btn btn-success btn-lg my-2"
                   onClick={BuyingSingleProductHandler}
                 >
                   Buy Now
@@ -190,23 +191,6 @@ const SingleProduct = (props) => {
                 </button>
               )}
             </div>
-            <hr />
-          </div>
-        </div>
-        <div className="col-md-3 col-12">
-          <div className="d-flex flex-column">
-            <p className="fs-4 fw-semibold mb-0">Standard Delivery</p>
-            <p className="fs-5 lead">3-5 Days</p>
-          </div>
-          <hr className="mb-1" />
-          <div className="d-flex flex-column">
-            <p className="fs-5 fw-semibold mt-1 mb-1">7 Days Return</p>
-            <p className="fs-5 fw-semibold mb-1 mt-1">Warranty Not Available</p>
-          </div>
-          <hr />
-          <div className="d-flex flex-column">
-            <p className="fs-4 fw-semibold mb-0">Delivery Method:</p>
-            <p className="fs-5 lead">Cash On Delivery</p>
           </div>
         </div>
       </div>
