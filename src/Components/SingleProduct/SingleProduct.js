@@ -86,12 +86,6 @@ const SingleProduct = (props) => {
 
   // ------COMPONENT------------
 
-  // CHECK THESE FUNCTIONALITIES
-  // -FORGET and RESET PASSWORD
-  // -CHANGE ACCOUNT SETTINGS ICON
-  // -MAKE IT FULLY RESPONSIVE
-  // -PHOTO FUNCTIONALITY
-
   if (productQuantity === 1) {
     disableDecrementButton = true;
   } else {
@@ -126,7 +120,7 @@ const SingleProduct = (props) => {
                 />
               )}
             </strong>
-            {/* <hr /> */}
+
             <div className="d-flex flex-column my-3">
               <p className=" fw-6 mb-1">Qunatity:&nbsp;</p>
               <div className="d-flex">
