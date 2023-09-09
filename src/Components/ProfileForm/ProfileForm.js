@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 
+// import image from ".";
 import * as actions from "../../Store/Actions/index";
 
 const ProfileForm = (props) => {
@@ -194,8 +195,8 @@ const ProfileForm = (props) => {
         className="row mt-5 border border-2 shadow rounded-1 "
         encType="multipart/form-data"
       >
-        {/* <div className="col-12  d-flex flex-column justify-content-center align-items-center my-2">
-          {editProfile ? (
+        <div className="col-12  d-flex flex-column justify-content-center align-items-center my-2">
+          {/* {editProfile ? (
             <>
               <input
                 type="file"
@@ -206,7 +207,9 @@ const ProfileForm = (props) => {
             </>
           ) : (
             <img
-              src={`/uploads/${props.user.photo}`}
+              src={
+                "https://e-commerce-backend-production-e87.up.railway.app/api/uploads/profile.png"
+              }
               alt="Profile"
               type="image"
               style={{ width: "220px", height: "220px" }}
@@ -215,8 +218,8 @@ const ProfileForm = (props) => {
                 console.error("Error loading image:", e);
               }}
             />
-          )}
-        </div> */}
+          )} */}
+        </div>
         <div className="row my-2">
           <div className="col-3-md col-4 fw-bolder fs-5  ">Username*</div>
           {editProfile ? (

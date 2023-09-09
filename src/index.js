@@ -1,13 +1,14 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import $ from "jquery";
+import Popper from "popper.js";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
-
-// Bootstrap CSS
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
 
 import App from "./App";
 import HomeReducer from "./Store/Reducers/Home";

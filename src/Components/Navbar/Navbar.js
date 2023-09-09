@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 
 import Cart from "../../utils/Icons/Cart.svg";
 import Default from "../../utils/Icons/profile.png";
+import Logo from "../../utils/Icons/shop-it.png";
 
 import * as actions from "../../Store/Actions/index";
 
@@ -45,9 +46,14 @@ const Navbar = (props) => {
     <div>
       <nav className="navbar navbar-expand-md bg-primary py-2">
         <div className="container-fluid">
-          <h1 className="display-5 text-light fw-semibold mx-2 me-5">
+          {/* <h1 className="display-5 text-light fw-semibold mx-2 me-5">
             Shop-It
-          </h1>
+          </h1> */}
+          <img
+            src={Logo}
+            style={{ width: "70px" }}
+            className=" rounded-circle ms-2 me-4"
+          />
           <button
             className="navbar-toggler"
             type="button"
